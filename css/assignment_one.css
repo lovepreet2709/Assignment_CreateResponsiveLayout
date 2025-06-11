@@ -4,3 +4,114 @@ Only this will be graded.
 */
 
 
+/*DESKTOP VIEW*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+#mainBody {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  margin-bottom: 50px;
+}
+
+#leftContainer,
+#rightContainer {
+  flex: 1;
+}
+
+#rightContainer {
+  display: grid;
+  grid-template-rows: repeat(3, 160px);
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+}
+
+.gridImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.zero {
+  grid-row: 1/4;
+}
+
+.gridImage {
+  overflow: hidden;
+}
+
+/*TABLET VIEW*/
+@media (max-width: 1000px) {
+  /* 1. Body width */
+  body {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  /* Make topMenu appear on the next line */
+  #topMenu {
+    display:none;  
+   }
+
+  /* 2. Stack containers vertically with 40px gap */
+  #mainBody {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* 3. Grid layout: 2 columns × 3 rows (160px each) */
+  #rightContainer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 160px);
+  }
+
+  /* 4. Hide .display_md elements */
+  .display_md {
+    display: none;
+  }
+}
+
+/*MOBILE VIEW*/
+@media (max-width: 570px) {
+  body {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  #topMenu {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+  }
+
+  #topMenu a {
+    font-size: 14px;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  #rightContainer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 160px);
+  }
+}
+
+
+
